@@ -1,7 +1,7 @@
 package tests
 
 import (
-	multitestcases "automated_tests/multiTestCases"
+	discounter "automated_tests/discounter"
 	"testing"
 )
 
@@ -24,7 +24,7 @@ func TestDiscountedPrice(t *testing.T) {
 	// act + assert
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res, err := multitestcases.DiscountedPrice(tc.price, tc.discountPercent)
+			res, err := discounter.DiscountedPrice(tc.price, tc.discountPercent)
 			if tc.expectedError && err == nil {
 				t.Errorf(
 					"DiscountedPrice(%.2f, %.2f) "+"should return an error",
